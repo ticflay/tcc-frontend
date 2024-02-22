@@ -5,7 +5,7 @@ interface LayoutProps {
 }
 
 export default function Layout({children}: LayoutProps) {
-    return <div className="flex flex-col gap-4 flex-1 p-6 mt-10 lg:mt-0">
+    return <div className="flex flex-col gap-4 flex-1 p-6 mt-14">
     <Header title="Histórico de avaliações" />
     {children}
 </div>

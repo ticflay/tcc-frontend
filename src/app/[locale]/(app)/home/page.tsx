@@ -86,7 +86,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-1 flex-col gap-2 mt-10 lg:mt-0">
+    <div className="flex flex-1 flex-col gap-2 mt-10 lg:mt-14">
       <div className="flex flex-col gap-4 lg:flex-row justify-between items-center">
         <div className="flex flex-row items-center gap-3">
           <p className="whitespace-nowrap">{t("Selecione uma avaliação")}</p>
