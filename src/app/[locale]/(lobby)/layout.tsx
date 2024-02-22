@@ -23,24 +23,18 @@ export default  function LobbyLayout({
 
   return (
     <div className="flex flex-col gap-6 h-full bg-secondary-honeydew">
-      <nav className="flex px-5 flex-row bg-primary-charcoal justify-between items-center  h-20 border-b border-solid">
+      <nav className="flex px-5 flex-row bg-primary-charcoal justify-between items-center min-h-[70px]  h-[70px] border-b border-solid fixed left-0 right-0 top-0">
         <div>
          <LanguageSelector color={'white'} locale={locale} />
         </div>
         <div className="gap-12 flex flex-row">
-          {/* <LinkItem href={`/`} text={t("Home")} />
-          <LinkItem href={`/}`}text={t("Sobre nós")} />
-          <LinkItem href={`/login`} text={t("Entrar")} />
-          <LinkItem href={`/`} text={t("Home")} />
-          <LinkItem href={`/`} text={t("Home")} />
-          <LinkItem href={`/`}text={t("Home")} /> */}
         </div>
         <div className="flex flex-row  gap-10 items-center">
             <Link className="bg-transparent text-primary-burnt_sienna text-sm font-bold" href={`/${locale}/login`}>{t("Entrar")}</Link>
             <Link className="bg-primary-burnt_sienna font-bold text-secondary-berkeley_blue h-10 w-28 flex items-center justify-center rounded" href={`/${locale}/register`}>{t("Cadastre-se")}</Link>
         </div>
       </nav>
-      <div className="w-full h-full  bg-secondary-honeydew">
+      <div className="w-full h-full  bg-secondary-honeydew mt-20">
       {children}
       </div>
     </div>
