@@ -222,7 +222,6 @@ export default function GeneralChartToPrint({
           ).length
         : 0;
       const sortedQuestions = questions.toSorted((a, b) => b.nota - a.nota);
-      console.log("sortedQuestions", sortedQuestions);
       return {
         nota: (percent * 10) / 2,
         positive: sortedQuestions.slice(0, 2),
@@ -359,7 +358,6 @@ export default function GeneralChartToPrint({
                           {data.negative
                             .map((item) => {
                               const tName = t(item.category.name);
-                              console.log("tName", tName);
                               return tName;
                             })
                             .join(", ")}

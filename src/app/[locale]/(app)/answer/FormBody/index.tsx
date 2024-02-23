@@ -43,11 +43,6 @@ export default function FormBody() {
   }, [currentForm, setFormAnswers]);
 
   useEffect(() => {
-    console.log('mudança',selectedCategory, selectedCriteria)
-  }, [selectedCategory, selectedCriteria])
-
-  useEffect(() => {
-    console.log('first access', firstAccess)
     if(formAnswers && firstAccess && questions && categories && criteria && formAnswers.length > 0) {
       setFirstAccess(false);
       const orderedForm = formAnswers.toSorted((a, b) => a.questionId > b.questionId ? -1 : 1);
@@ -55,10 +50,6 @@ export default function FormBody() {
         const lastQuestion = questions.find(q => q.id === orderedForm[0].questionId);
         const lastCategory = categories.find(c => c.id === lastQuestion?.categoryId);
         const lastCriterion = criteria.find(c => c.id === lastCategory?.criteriaId);
-        console.log('last question', lastQuestion)
-        console.log('last lastCategory', lastCategory)
-        console.log('last lastCriterion', lastCriterion)
-
         if(lastCriterion && lastCategory) {
           setSelectedCriteria(lastCriterion, false, false);
           setSelectedCategory(lastCategory)
@@ -130,8 +121,8 @@ export default function FormBody() {
       : [];
   return (
     <div className="md:w-[calc(100%-384px)] gap-6 flex flex-col flex-1 md:ml-96">
-      {selectedCriteria?.id !== -1 && selectedCriteria?.id !== -2 && <div>{t("Para responder, selecione todas as respostas que se aplicam e as perguntas serão salvas automaticamente. Caso a pergunta seja opcional e não se encaixe no contexto da sua empresa, você pode descartá-la clicando no ícone de lixeira ao lado da pergunta. Você sempre pode recuperar as perguntas descartadas")}.</div>}
-      {selectedCriteria?.id !== -1 && selectedCriteria?.id !== -2 && <div><b>Sobre a categoria:</b> {t(selectedCategory?.description)}</div>}
+      {selectedCriteria?.id !== -1 && selectedCriteria?.id !== -2 && <div>{t("category-instructions")}.</div>}
+      {selectedCriteria?.id !== -1 && selectedCriteria?.id !== -2 && <div><b>{t("Sobre a categoria")}:</b> {t(`${selectedCategory?.identifier}-description`)}</div>}
 
       {selectedCriteria?.id !== -1 &&
         selectedCriteria?.id !== -2 &&
@@ -143,6 +134,7 @@ export default function FormBody() {
             !NAAnswers?.map((item) => item.questionId).includes(question.id)
           ) {
             return (
+              <>
               <FormItem
                 answer={formAnswers?.find(
                   (item) => item.questionId === question.id
@@ -151,6 +143,7 @@ export default function FormBody() {
                 submitAnswer={submitAnswer}
                 key={question.id}
               />
+              </>
             );
           }
         })}

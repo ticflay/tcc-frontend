@@ -39,7 +39,7 @@ export default  function AppLayout({
           <Head>
               <title>teste</title>
           </Head>
-          <div className="min-h-[calc(100vh-60px)] bg-gray-100 max-w=[100vw] w-screen overflow-x-hidden">
+          <div className="min-h-screen bg-gray-100 max-w=[100vw] w-screen overflow-x-hidden">
               <div className="flex">
                   <MenuBarMobile setter={setShowSidebar} />
                   <Sidebar locale={locale} logout={logout} show={showSidebar} setter={setShowSidebar} />

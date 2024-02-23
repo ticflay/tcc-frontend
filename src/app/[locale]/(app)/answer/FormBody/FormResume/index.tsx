@@ -22,9 +22,9 @@ export default function FormResume() {
 
   return (
 <div className="flex flex-col gap-5 p-4">
-  <p>Aqui está o resummo da sua avaliação. Após clicar em &quot;Enviar&quot;, a avaliação não poderá mais ser editada!</p>
-<span>Nota geral da avaliação: <b>{calculateGeneralGrade()} </b></span>
-<span><b>Nota por critério e categoria:</b></span>
+  <p>{t("resume-1")} &quot;{t("Enviar")}&quot;, {t("a avaliação não poderá mais ser editada")}!</p>
+<span>{t("Nota geral da avaliação")}: <b>{calculateGeneralGrade()} </b></span>
+<span><b>{t("Nota por critério e categoria")}:</b></span>
 
     <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
       {criteria?.map((criterion) => {
@@ -32,7 +32,7 @@ export default function FormResume() {
           <div key={criterion.id}>
             <div className="flex flex-row justify-between">
             <span className="text-center font-semibold">{t(criterion.name)}</span>
-            <span>Nota: <b>{calculateCriterionGrade(criterion)}</b> </span>
+            <span>{t("Nota")}: <b>{calculateCriterionGrade(criterion)}</b> </span>
             </div>
             
             <table className="border border-solid border-black w-full">

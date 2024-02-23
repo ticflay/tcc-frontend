@@ -82,7 +82,8 @@ export default function FormNav() {
     }
   };
   const progress =
-    questions && formAnswers ? formAnswers.length / questions?.length : 0;
+    questions && formAnswers && (questions.length > 0) ? formAnswers.length / questions?.length : 0;
+    console.log('progress', questions, formAnswers)
 
     const onDescarte = () => {
       if(currentForm) {

@@ -273,7 +273,7 @@ export default function EnvironmentChart({
             </div>
             <div className="flex flex-col gap-4">
               <span>
-                <b>{t("Sobre a categoria")}:</b> {t(selectedCategory.description)}
+                <b>{t("Sobre a categoria")}:</b> {t(`${selectedCategory.identifier}-description`)}
               </span>
               <span className="font-bold">
                 {t("Algumas recomendações de ações para melhoria baseadas nas suas respostas")}:
@@ -295,8 +295,8 @@ export default function EnvironmentChart({
                   .map((q) => {
                     return (
                       <div className="bg-white p-6 rounded-md " key={q.id}>
-                        <span className="font-semibold">{t(q.name)}{" "}</span>
-                        <span >{t(q.description)}</span>
+                        <span className="font-semibold">{t(`${q.identifier}-question`)}{" "}</span>
+                        <span >{t(`${q.identifier}-direction`)}</span>
                       </div>
                     );
                   })
@@ -326,7 +326,7 @@ export default function EnvironmentChart({
                   .map((q) => {
                     return (
                       <div className="bg-green-100 p-6 rounded-md " key={q.id}>
-                        <span >{t(q.name)}</span>
+                        <span >{t(`${q.identifier}-question`)}</span>
                       </div>
                     );
                   })

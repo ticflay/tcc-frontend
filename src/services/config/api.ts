@@ -38,7 +38,6 @@ api.interceptors.response.use(
   async (error) => {
     const { url } = error.config;
     const { status } = error.response;
-    console.log('oi o erro aq', error);
     if (url.endsWith("logout") || url.endsWith("validate_token")) {
       return;
     }

@@ -61,9 +61,9 @@ export default function History() {
   };
   return (
     <div className="flex flex-col gap-4 ">
-      <div className=" flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl: grid-cols-5 gap-5">
       {allForms && allForms.length > 0 ? (
-        allForms
+        <div className=" flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl: grid-cols-5 gap-5">
+        {allForms
           ?.toSorted((a, b) => +new Date(b.createdAt) - +new Date(a.createdAt))
           .map((item) => {
             return (
@@ -119,13 +119,13 @@ export default function History() {
                 </div>
               </button>
             );
-          })
+          })}
+       </div>
       ) : (
         <span className="w-full text-center font-bold p-4">
           {t("Você ainda não respondeu nenhuma avaliação")}.
         </span>
       )}
-    </div>
     <div className="flex flex-col gap-6">
           <button
             onClick={() => setExpanDeleted((prev) => !prev)}
@@ -135,9 +135,10 @@ export default function History() {
             {expandDeleted ? <FaChevronUp /> : <FaChevronDown />}
           </button>
           {expandDeleted &&
-      <div className=" flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl: grid-cols-5 gap-5">
-      {allDeletedForms && allDeletedForms.length > 0 ? (
-               allDeletedForms
+      allDeletedForms && allDeletedForms.length > 0 ? (
+        <div className=" flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl: grid-cols-5 gap-5">
+
+              {allDeletedForms
                  ?.toSorted((a, b) => +new Date(b.createdAt) - +new Date(a.createdAt))
                  .map((item) => {
                    return (
@@ -191,13 +192,14 @@ export default function History() {
                        </div>
                      </button>
                    );
-                 })
+                 })}
+                 </div>
              ) : (
                <span className="w-full text-center font-bold p-4">
                  {t("Nenhuma avaliação descartada")}.
                </span>
              )}
-           </div>}
+
         </div>
    
     </div>

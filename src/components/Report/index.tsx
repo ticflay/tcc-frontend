@@ -15,6 +15,7 @@ import { fetchAnswers } from "@/services/answer";
 import { useRouter } from "next/navigation";
 import GeneralChartToPrint from "./Print/GeneralChartToPrint";
 import DetaildChartToPrint from "./Print/DetailedChartToPrint";
+import { useTranslations } from "next-intl";
 
 export interface ReportProps {
   form?: Form;
@@ -27,6 +28,7 @@ export default function Report({ form, isPrinting }: ReportProps) {
   const [selectedMenu, setSelectedMenu] = useState<MenuType>("Geral");
   const [formAnswers, setFormAnswers] = useState<AnswerForm[]>();
   const router = useRouter();
+  const t = useTranslations();
 
   useEffect(() => {
     if (form) {
@@ -58,11 +60,11 @@ export default function Report({ form, isPrinting }: ReportProps) {
         <div className="flex flex-col gap-5 items-center justify-center flex-1">
           <Image src={desempenhoImage} alt="desempenho" />
           <span className="font-bold text-sm">
-            Ops, parece que você ainda não respondeu a avaliação!
+            {t("Ops, parece que você ainda não respondeu a avaliação")}!
           </span>
           <Button
             onClick={() => router.push("/answer")}
-            text="Iniciar avaliação"
+            text={t("Iniciar Avaliação")}
           />
         </div>
       )}
@@ -74,6 +76,7 @@ export function ReportToPrint({ form, isPrinting }: ReportProps) {
   const [selectedMenu, setSelectedMenu] = useState<MenuType>("Geral");
   const [formAnswers, setFormAnswers] = useState<AnswerForm[]>();
   const router = useRouter();
+  const t = useTranslations();
 
   useEffect(() => {
     if (form) {
@@ -85,7 +88,7 @@ export function ReportToPrint({ form, isPrinting }: ReportProps) {
 
   return form ? (
     <div className="m-3 flex flex-col gap-6">
-      <span className="font-bold text-lg text-center">Relatório de Desempenho</span>
+      <span className="font-bold text-lg text-center">{t("Relatório de Desempenho")}</span>
       {selectedMenu === "Geral" && (
         <GeneralChartToPrint form={form} setSelectedMenu={setSelectedMenu} />
       )}

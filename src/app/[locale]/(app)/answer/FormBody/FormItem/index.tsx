@@ -71,7 +71,7 @@ export default function FormItem({
               : "font-semibold"
           }`}
         >
-          {t(question.name)}
+          {t(`${question.identifier}-question`)}
         </label>
       </fieldset>
       {!question.required && (
@@ -82,7 +82,7 @@ export default function FormItem({
           }
         >
           {answer?.answer === "NA" ? (
-            <FaTrashRestore size={16} color='#2a9d8f' title="Restaurar" />
+            <FaTrashRestore size={16} color='#2a9d8f' title={t("Restaurar")} />
           ) : (
             <FaTrash title="Não se aplica" className={"hover:opacity-80"} size={16} color={"red"} />
           )}

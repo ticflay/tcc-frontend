@@ -147,7 +147,7 @@ export default function FormFoot() {
           getAllForms();
           setInstructions();
           setFormAnswers(undefined);
-          toast("Avaliação enviada com sucesso!", {type: 'success'});
+          toast(`${t("Avaliação enviada com sucesso")}!`, {type: 'success'});
           router.push('home');
         });
       } else {
@@ -174,6 +174,8 @@ export default function FormFoot() {
       setSelectedCriteria(criteria[index - 1], true);
     } else if (isFirstCriteria) {
       setInstructions();
+    }else if(selectedCriteria?.id === -2 && criteria) {
+      setSelectedCriteria(criteria[criteria?.length-1], true)
     }
   };
 
@@ -181,8 +183,8 @@ export default function FormFoot() {
     <div className="flex flex-row gap-9 justify-end">
       {selectedCriteria?.id === -1 && !currentForm ? (
         <>
-          <Button onClick={() => createForm(true)} text="Iniciar avaliação em branco" buttonStyle={allForms && allForms?.length > 0 ? "secondary" : 'primary'}/>
-          { allForms && allForms?.length > 0 && <Button onClick={() => createForm(false)} text="Iniciar com última resposta" buttonStyle="primary" />}
+          <Button onClick={() => createForm(true)} text={t("Iniciar avaliação em branco")} buttonStyle={allForms && allForms?.length > 0 ? "secondary" : 'primary'}/>
+          { allForms && allForms?.length > 0 && <Button onClick={() => createForm(false)} text={t("Iniciar com Última Resposta")} buttonStyle="primary" />}
         </>
       ) : (
         <>

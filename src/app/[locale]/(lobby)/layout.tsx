@@ -30,8 +30,8 @@ export default  function LobbyLayout({
         <div className="gap-12 flex flex-row">
         </div>
         <div className="flex flex-row  gap-10 items-center">
-            <Link className="bg-transparent text-primary-burnt_sienna text-sm font-bold" href={`/${locale}/login`}>{t("Entrar")}</Link>
-            <Link className="bg-primary-burnt_sienna font-bold text-secondary-berkeley_blue h-10 w-28 flex items-center justify-center rounded" href={`/${locale}/register`}>{t("Cadastre-se")}</Link>
+            <Link className="bg-transparent hover:opacity-80 text-primary-burnt_sienna text-sm font-bold" href={`/${locale}/login`}>{t("Entrar")}</Link>
+            <Link className="bg-primary-burnt_sienna font-bold hover:opacity-80 text-secondary-berkeley_blue h-10 w-28 flex items-center justify-center rounded" href={`/${locale}/register`}>{t("Cadastre-se")}</Link>
         </div>
       </nav>
       <div className="w-full h-full  bg-secondary-honeydew mt-20">

@@ -76,13 +76,13 @@ export default function Register({params: {locale}}: RegisterProps) {
           label={t("Senha")}
           name="password"
         />
-        <button type="submit" className="bg-focusedColor h-10 flex items-center justify-center text-white font-bold w-full rounded">
+        <button type="submit" className="bg-focusedColor hover:opacity-80 h-10 flex items-center justify-center text-white font-bold w-full rounded">
           {t("Cadastre-se")}
         </button>
       </form>
       <div className="flex flex-row items-center justify-center gap-1">
         <span>{t("Já tem uma conta?")}</span>
-        <Link href={`/login`} className="font-bold underline">
+        <Link href={`/login`} className="font-bold underline hover:opacity-80">
           {t("Entre aqui")}.
         </Link>
       </div>

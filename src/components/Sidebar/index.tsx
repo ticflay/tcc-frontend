@@ -88,7 +88,7 @@ export default function Sidebar({
           </div>
           <div className="flex flex-col bg-white lg:bg-inherit lg:flex-row gap-4 p-3">
             <button
-              className="flex flex-row lg:border  border-solid border-gray-200 border-b  lg:justify-normal justify-center  lg:bg-gray-100 rounded-md items-center gap-2 hover:opacity-80 p-2"
+              className="flex flex-row lg:border  border-solid border-gray-200 border-b whitespace-nowrap  lg:justify-normal justify-center  lg:bg-gray-100 rounded-md items-center gap-2 hover:opacity-80 p-2"
               onClick={handleLogOut}
             >
               <CiLogout />
