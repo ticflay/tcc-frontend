@@ -1,5 +1,3 @@
-Here's an adapted version of the front-end README using a similar structure to the back-end README, with placeholders and additional information included:
-
 # About the Project
 Small and medium-sized enterprises (SMEs) play a significant role in economic and social development. The adoption and promotion of sustainable business practices are gaining momentum, driven in part by international legislation. SMEs face specific challenges in publicizing their sustainable practices. This project aims to support these enterprises in effectively measuring and reporting their performance using Environmental, Social, and Governance (ESG) criteria through the development of a web-based self-assessment tool. The proposed system offers a simplified self-assessment and performance report with improvement suggestions, ensuring transparency and visibility of the steps necessary to achieve sustainable practices.
 
@@ -187,7 +185,3 @@ ou com o npm:
 ```sh
 npm start
 ```
-
-### Conclusion
-
-By following these instructions, you will be able to set up, run, and build the front-end project efficiently. For any further questions or contributions, please refer to the project's contribution guidelines and contact information.
