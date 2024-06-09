@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# Sobre o projeto
+As pequenas e médias empresas tem um papel importante no desenvolvimento econômico e social, e a adoção e divulgação de práticas empresariais sustentáveis vêm ganhando cada vez mais força, inclusive por legislações internacionais. Para divulgar suas práticas sustentáveis, as pequenas e médias empresas enfrentam desafios específicos. Esse trabalho tem o objetivo de apoiar essas empresas a mensurar e relatar de forma efetiva seu desempenho, utilizando critérios Ambientais, Sociais e de Governança, através do desenvolvimento de uma ferramenta web de autoavaliação. O sistema proposto traz uma autoavaliação simplificada e relatório de desempenho com sugestões de melhoria, garantindo a transparência e visibilidade do que é necessário para atingir práticas sustentáveis.
+
 ## Getting Started
 
 First, run the development server:
